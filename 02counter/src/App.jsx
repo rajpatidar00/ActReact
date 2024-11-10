@@ -2,10 +2,12 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState(0);
 
   const addValue = () => {
-    if (counter < 99) setCounter(counter + 1);
+    if (counter < 99) {
+      setCounter((prev) => prev + 1);
+    }
   };
   const removeVal = () => {
     if (counter > 0) {
@@ -24,3 +26,4 @@ function App() {
 }
 
 export default App;
+   
