@@ -1,11 +1,13 @@
 import "./App.css";
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect, useRef } from "react";
 
 function App() {
   const [lenght, setLenght] = useState(8);
   const [number, setNumber] = useState(false);
   const [char, setChar] = useState(false);
   const [password, setPassword] = useState("");
+
+  const passRef = useRef(null);
 
   const genrator = useCallback(() => {
     let pass = "";
@@ -24,6 +26,13 @@ function App() {
     setPassword(pass);
   }, [lenght, char, number]);
 
+  const CopyPassword = () => {
+    window.navigator.clipboard.writeText(password);
+    passRef.current.select();
+  };
+
+  
+
   useEffect(() => {
     genrator();
   }, [lenght, number, char]);
@@ -37,8 +46,11 @@ function App() {
             type="text"
             value={password}
             readOnly
+            ref={passRef}
           />
-          <button className="p-3 rounded-xl bg-blue-800">copy</button>
+          <button onClick={CopyPassword} className="p-3 rounded-xl bg-blue-800">
+            copy
+          </button>
         </div>
         <div className="flex flex-row items-center justify-center">
           <div>
