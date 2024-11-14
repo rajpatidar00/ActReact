@@ -27,7 +27,7 @@ function App() {
     <>
       <div
         style={{
-          backgroundImage: `url("https://images.pexels.com/photos/6465163/pexels-photo-6465163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")`,
+          backgroundImage: `url("https://i.pinimg.com/736x/9c/1a/83/9c1a83c56bff5bef16ea5d89f11360c1.jpg")`,
         }}
         className="read-the-docs bg-gray-800 text-red-800 bg-no-repeat bg-cover w-full h-screen flex items-center justify-center"
       >
